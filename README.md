@@ -6,5 +6,7 @@
 # Result
 dataset: 3 gifs
 Item 1 is the CPU usage and memory usage of using custom GIF controls
+
 Item 2 is the CPU usage and memory usage when using the webview2 control to load HTML with embedded GIFs
+
 Item 3 is the CPU usage and memory usage when placing GIFs using the native WinUI image control
