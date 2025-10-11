@@ -273,6 +273,7 @@ namespace GIFImage.WinUI.Controls
                 gifControlCore.Draw -= CanvasAnimatedControl_Draw;
                 gifControlCore.Update -= CanvasAnimatedControl_Update;
                 gifControlCore.CreateResources -= CanvasAnimatedControl_CreateResources;
+                gifControlCore.LayoutUpdated -= GifControlCore_LayoutUpdated;
             }
             debouncer?.Abort();
             debouncer = null;

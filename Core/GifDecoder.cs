@@ -202,10 +202,10 @@ namespace GIFImage.WinUI.Core
                 if (line < height)
                 {
                     int k = line * stride;
-                    int dx = k + ix * 4;
-                    int dlim = dx + iw * 4;
-                    if ((k + width * 4) < dlim)
-                        dlim = k + width * 4;
+                    int dx = k + (ix << 2);
+                    int dlim = dx + (iw << 2);
+                    if ((k + (width << 2)) < dlim)
+                        dlim = k + (width << 2);
                     int sx = i * iw;
                     while (dx < dlim)
                     {
@@ -531,7 +531,7 @@ namespace GIFImage.WinUI.Core
 
         protected byte[] GetPixels()
         {
-            int stride = 4 * width; // rgba = 4 byte
+            int stride = width << 2; // = width * 4(rgba = 4 byte)
             byte[] dest = new byte[stride * height];
 
             if (lastDispose > 0)
@@ -576,10 +576,10 @@ namespace GIFImage.WinUI.Core
                 if (line < height)
                 {
                     int k = line * stride;
-                    int dx = k + ix * 4;
-                    int dlim = dx + iw * 4;
-                    if ((k + width * 4) < dlim)
-                        dlim = k + width * 4;
+                    int dx = k + (ix << 2);
+                    int dlim = dx + (iw << 2);
+                    if ((k + (width << 2)) < dlim)
+                        dlim = k + (width << 2);
                     int sx = i * iw;
                     while (dx < dlim)
                     {
