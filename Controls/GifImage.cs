@@ -103,16 +103,16 @@ namespace GIFImage.WinUI.Controls
                 {
                     if (gifControlCore is CanvasAnimatedControl control && _rootUIElement is UIElement root)
                     {
-                        var controlRect = new Rect(0, 0, control.ActualWidth, control.ActualHeight);
-                        if (controlRect.Width != 0 && controlRect.Height != 0)
-                        {
-                            var transform = control.TransformToVisual(root);
-                            var transformControlRect = transform.TransformBounds(controlRect);
-                            var rootRect = new Rect(0, 0, root.ActualSize.X, root.ActualSize.Y);
-                            bool isContains = CheckIntersection(rootRect, transformControlRect);
-                            control.Paused = !isContains;
-                            this.IsVisible = isContains;
-                        }
+                        //Determine if it is visible within the window, if not, pause rendering
+                        //Scenario 1:
+                        //Scroll out of the window
+                        //Scenario 2:
+                        //Switch to another TabViewItem
+                        var rootRect = new Rect(0, 0, root.ActualSize.X, root.ActualSize.Y);
+                        var allVisualControls = VisualTreeHelper.FindElementsInHostCoordinates(rootRect, root);
+                        var isContains = allVisualControls.Contains(control);
+                        control.Paused = !isContains;
+                        this.IsVisible = isContains;
                     }
                 });
             }, 200);
