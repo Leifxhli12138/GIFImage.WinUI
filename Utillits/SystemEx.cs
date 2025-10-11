@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace GIFImage.WinUI.Utillits
 {
     /// <summary>
-    /// linq 等等方法扩展类
+    /// Linq and other methods to extend classes
     /// </summary>
     internal static class SystemEx
     {
