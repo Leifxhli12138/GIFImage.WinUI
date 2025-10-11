@@ -218,13 +218,6 @@ namespace GIFImage.WinUI.Controls
         {
             await CreateResourcesAsync();
         }
-        private bool CheckIntersection(Rect a, Rect b)
-        {
-            return !(a.Right < b.Left ||
-                     a.Left > b.Right ||
-                     a.Bottom < b.Top ||
-                     a.Top > b.Bottom);
-        }
 
         private async Task CreateResourcesAsync()
         {
