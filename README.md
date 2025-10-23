@@ -3,9 +3,8 @@ Using asynchronous decoding mode, decode one frame, cache one frame, play one fr
 # How to Use?
     xmlns:gif="using:GIFImage.WinUI.Controls"
     <gif:GifImage Height="300" Width="400" Source="{Binding Path}" Stretch="None"/>
-<img width="1155" height="128" alt="image" src="https://github.com/user-attachments/assets/afc32f59-6d5b-4fa3-aacf-b8a6384d5ed9" />
-
 # Result
+<img width="1155" height="128" alt="image" src="https://github.com/user-attachments/assets/afc32f59-6d5b-4fa3-aacf-b8a6384d5ed9" />
 
 dataset: 3 gifs
 
